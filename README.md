@@ -1,189 +1,139 @@
-[![Badge Commits]][Commit Rate]
-[![Badge Issues]][Issues]
-[![Badge Localization]][Crowdin]
-[![Badge License]][License]
-[![Badge NPM]][NPM]
-[![Badge Mozilla]][Mozilla]
-![Badge Chrome]
-[![Badge Edge]][Edge]
+# YouTube Firefox 加強版
 
-***
+這是一個基於 [uBlock Origin](https://github.com/gorhill/uBlock) 的個人修改版 Firefox 外掛，主要加入 YouTube 播放、環境光與手機使用功能。
 
-<h1 align="center">
-<sub>
-<img src="https://github.com/gorhill/uBlock/blob/master/src/img/ublock.svg" height="38" width="38">
-</sub>
-uBlock Origin (uBO)
-</h1>
+> 這不是官方 uBlock Origin，也不代表 Google、YouTube 或其他第三方專案。
 
-| Browser   | Install from ... | Status |
-| :-------: | ---------------- | ------ |
-| <img src="https://github.com/user-attachments/assets/b0136512-56a5-4856-8c50-4971c957a24f" alt="Get uBlock Origin for Firefox"> | <a href="https://addons.mozilla.org/addon/ublock-origin/">Firefox Add-ons</a> | [uBO works best on Firefox](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox) |
-| <img src="https://github.com/user-attachments/assets/3a7569f8-688b-4eb1-a643-8d0fe173aefe" alt="Get uBlock Origin for Microsoft Edge"> | <a href="https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak">Edge Add-ons</a> | <a href="https://blogs.windows.com/msedgedev/2026/08/07/moving-the-microsoft-edge-extensions-ecosystem-forward-with-manifest-version-3/">"Moving the Microsoft Edge extensions ecosystem forward with Manifest Version 3"</a>: "Beginning in August 2026, Microsoft Edge will start the consumer transition away from Manifest Version 2 (MV2) extensions and toward MV3. Our goal is to complete the consumer transition by the end of 2026, with enterprise deprecation following in early 2027." |
-| <img src="https://github.com/user-attachments/assets/938f080c-fe64-4e48-8b89-4bfceabb56e6" alt="Get uBlock Origin for Opera"> | <a href="https://addons.opera.com/extensions/details/ublock/">Opera Add-ons</a> |
-| <img src="https://github.com/user-attachments/assets/5463ef88-873b-4516-8514-5277664cfde7" alt="Get uBlock Origin for Chromium"> | Removed | <a href="https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline#aug_31st_2026_all_remaining_manifest_v2_extensions_removed_from_the_chrome_web_store">"Manifest V2 support timeline"</a>: "Aug 31st 2026: All remaining Manifest V2 extensions removed from the Chrome Web Store"<br><a href="https://github.com/uBlockOrigin/uBlock-issues/wiki/About-Google-Chrome's-%22This-extension-may-soon-no-longer-be-supported%22">About Google Chrome's "This extension may soon no longer be supported"</a> |
-| <img src="https://github.com/user-attachments/assets/2e9037c4-836d-44c1-a716-ba96e89daaff" alt="Get uBlock Origin for Thunderbird"> | <a href="https://addons.thunderbird.net/thunderbird/addon/ublock-origin/">Thunderbird Add-ons</a> | [No longer updated and stuck at 1.49.2.](https://github.com/uBlockOrigin/uBlock-issues/issues/2928) Later versions require "GitHub - Releases". |
-| <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" height="50" alt="Get uBlock Origin through GitHub"> | <a href="https://github.com/gorhill/uBlock/releases">GitHub - Releases</a> | Stable and development versions on Firefox, Chromium MV2, and Thunderbird. Must be placed manually into web browsers; the Chromium and Thunderbird versions usually won't auto-update.
+## 功能
 
-<h3> Related: 
-<sub>
-<img src="https://github.com/gorhill/uBlock/blob/master/platform/mv3/extension/img/ublock.svg" height="24" width="24">
-</sub>
-<a href="https://github.com/uBlockOrigin/uBOL-home">uBlock Origin Lite</a>
-</h3>
+- 隱藏部分 YouTube 廣告元素
+- 顯示 Return YouTube Dislike 倒讚估算
+- 影片進入已知業配區段時顯示「跳過業配」
+- 播放速度 `0.10x～4.00x`
+- 速度滑桿、加減按鈕與常用速度按鈕
+- Ambient Lite 環境光效果
+- 中文控制面板
+- 支援桌面 Firefox 與 Firefox Android 的相容設計
 
+## 安裝前：先安裝 Firefox
 
-***
+- [下載 Windows／macOS／Linux 版 Firefox](https://www.mozilla.org/firefox/new/)
+- [下載 Android 版 Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
+- [下載 iPhone／iPad 版 Firefox](https://www.mozilla.org/firefox/browsers/mobile/ios/)
 
-uBlock Origin (uBO) is a CPU and memory-efficient [wide-spectrum content blocker][Blocking] for Chromium and Firefox. It blocks ads, trackers, coin miners, popups, annoying anti-blockers, malware sites, etc., by default using [EasyList][EasyList], [EasyPrivacy][EasyPrivacy], [Peter Lowe's Blocklist][Peter Lowe's Blocklist], [Online Malicious URL Blocklist][Malicious Blocklist], and uBO [filter lists][uBO Filters]. There are many other lists available to block even more. Hosts files are also supported. uBO uses the EasyList filter syntax and [extends][Extended Syntax] the syntax to work with custom rules and filters.
+本外掛主要支援桌面 Firefox 與 Android Firefox。iPhone／iPad 版 Firefox 目前不支援這類 Firefox 外掛。
 
-You may easily unselect any preselected filter lists if you think uBO blocks too much. For reference, Adblock Plus installs with only EasyList, ABP filters, and Acceptable Ads enabled by default.
+## 下載外掛
 
-It is important to note that using a blocker is **NOT** [theft]. Do not fall for this creepy idea. The _ultimate_ logical consequence of `blocking = theft` is the criminalization of the inalienable right to privacy.
+<!-- 這個連結會在 GitHub Release 上傳同名 XPI 後生效。 -->
 
-Ads, "unintrusive" or not, are just the visible portion of the privacy-invading means entering your browser when you visit most sites. **uBO's primary goal is to help users neutralize these privacy-invading methods** in a way that welcomes those users who do not wish to use more technical means.
+[![下載 Firefox 外掛](https://img.shields.io/badge/下載-Firefox%20外掛-FF7139?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](../../releases/latest/download/youtube-uBlock-firefox.xpi)
 
-***
+## 電腦版 Firefox 安裝方式
 
-* [Documentation](#documentation)
-* [Installation](#installation)
-  * [Firefox](#firefox)
-  * [Chromium](#chromium)
-  * [Thunderbird](#thunderbird)
-  * [All Programs](#all-programs)
-  * [Enterprise Deployment](#enterprise-deployment)
-* [Release History](#release-history)
-* [Translations](#translations)
-* [About](#about)
+1. 按上面的按鈕下載 `.xpi` 檔案。
+2. 開啟 Firefox。
+3. 在網址列輸入 `about:addons`。
+4. 點擊右上角的齒輪。
+5. 選擇「從檔案安裝附加元件」。
+6. 選擇下載的 `.xpi` 檔案。
+7. 按「新增」。
 
-## Documentation
+如果 Firefox 顯示檔案未簽署，代表該版本還不能直接安裝，需要等待 Mozilla 簽署完成，或使用下方的開發者測試方式。
 
-<table>
-    <thead>
-        <tr>
-            <th>Basic Mode</th>
-            <th>Advanced Mode</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>The <a href="https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface">simple popup user interface</a> for an install-it-and-forget-it type of installation that is configured optimally by default.</td>
-            <td>The <a href="https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide">advanced popup user interface</a> includes a point-and-click firewall that is configurable on a per-site basis.</td>
-        </tr>
-        <tr>
-            <td align="center" valign="top"><a href="https://github.com/gorhill/uBlock/wiki/Quick-guide:-popup-user-interface"><img src="https://user-images.githubusercontent.com/585534/232531044-c4ac4dd5-0b60-4c1e-aabb-914be04b846c.png"/></a></td>
-            <td align="center" valign="top"><a href="https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-quick-guide"><img src="https://user-images.githubusercontent.com/585534/232531439-a8f81cc3-6622-45c4-8b32-7348cecf6e98.png"/></a></td>
-        </tr>
-    </tbody>
-</table>
+## Android Firefox 安裝方式
 
-Visit the [Wiki][Wiki] for documentation.
+Android Firefox 只能安裝經 Mozilla 簽署的外掛。最新 Firefox Android 的安裝步驟如下：
 
-For support, questions, or help, visit [/r/uBlockOrigin][Reddit].
+1. 在手機上開啟 Firefox Android。
+2. 點擊右上角的「⋮」。
+3. 點擊「設定」。
+4. 滑到最下面，點擊「關於 Firefox」。
+5. 快速連續點擊 Firefox 圖示 5 次。
+6. 返回「設定」。
+7. 點擊「從檔案安裝擴充功能」。
+8. 選擇下載的 `.xpi` 檔案。
+9. 點擊「新增」。
 
-## Installation
+如果找不到「從檔案安裝擴充功能」，或出現「無法安裝」，通常是以下原因之一：
 
-[Required Permissions][Permissions]
+- Firefox 版本太舊
+- 外掛尚未經 Mozilla 簽署
+- 外掛尚未宣告支援 Android
 
-#### Firefox
+## 使用方式
 
-[Firefox Add-ons][Mozilla]
+安裝完成後，開啟 YouTube 影片即可使用。
 
-[Development Builds][Beta]
+### 調整播放速度
 
-uBO [works best][Works Best] on Firefox and is available for desktop and Android versions.
+影片頁面會顯示速度控制面板：
 
-#### Chromium
+- 點擊 `−` 讓影片變慢
+- 點擊 `＋` 讓影片變快
+- 拖曳滑桿調整速度
+- 支援 `0.10x` 到 `4.00x`
 
-Chrome Web Store: Removed on 2026-08-31
+### 跳過業配
 
-[Microsoft Edge Add-ons][Edge] (Published by [Nicole Rolls][Nicole Rolls] until version 1.62. Ownership transfer at version 1.64.)
+如果影片有 SponsorBlock 業配資料，播放到業配區段時會出現「跳過業配」按鈕。點擊後會跳到業配結束位置。
 
-[Opera Add-ons][Opera]
+這是手動跳過，不會自動跳過，也不會提交 SponsorBlock 資料。
 
-uBO should be compatible with any Chromium-based browser.
+### 顯示倒讚
 
-#### Thunderbird
+影片下方會顯示 Return YouTube Dislike 提供的倒讚估算。這不是 YouTube 官方數字，可能與實際數字不同。
 
-[Thunderbird Add-ons][Thunderbird]
+### 使用環境光
 
-In Thunderbird, uBlock Origin does not affect emails, just feeds.
+點擊「環境光」可以調整：
 
-#### All Programs
+- 環境光開關
+- 光暈強度
+- 模糊程度
+- 顏色飽和度
+- 更新頻率
 
-Do **NOT** use uBO with any other content blocker. uBO [performs][Performance] as well as or better than most popular blockers. Other blockers can prevent uBO's privacy or anti-blocker-defusing features from working correctly.
+影片暫停或切換到其他分頁時，環境光會停止更新以節省效能。
 
-[Manual Installation][Manual Installation]
+## 已知限制
 
-#### Enterprise Deployment
+- 只處理部分 YouTube 廣告元素，不保證永久有效
+- SponsorBlock 只處理影片內已知業配，不處理 YouTube 前置廣告
+- 倒讚數是估算值，不是官方數字
+- Ambient Lite 會增加 GPU 使用量，低階手機可能需要降低更新頻率
+- iPhone／iPad 版 Firefox 不支援本外掛
+- 目前尚未提供影片下載功能
+- Android 實機相容性仍在測試中
 
-[Deploying uBO][Deployment]
+## 隱私
 
-## Release History
+- Ambient Lite 只在本機取樣影片畫面
+- 不會上傳影片畫面
+- SponsorBlock 只查詢影片區段資料
+- Return YouTube Dislike 只查詢倒讚資料
+- 不提供登入、投票或使用行為分析
 
-[Releases Page][Releases]
+## 開發者測試
 
-## Translations
+如果下載的 XPI 尚未簽署，可以在電腦 Firefox 暫時載入原始碼：
 
-Help translate uBO via [Crowdin][Crowdin].
+1. 下載或複製本 repository。
+2. 開啟 Firefox 的 `about:debugging`。
+3. 點擊「此 Firefox」。
+4. 點擊「載入暫時附加元件」。
+5. 選擇專案中的 `platform/firefox/manifest.json`。
 
-## About
+建置需要 Node.js 與 WSL/Linux 環境：
 
-[Manifesto][Manifesto]
+```bash
+npm ci
+make dist/build/uAssets
+bash tools/make-firefox.sh
+```
 
-[Privacy Policy][Privacy Policy]
+## 授權與出處
 
-[GPLv3 License][License]
+本專案基於 uBlock Origin，使用 GPLv3 或後續版本授權。
 
-Free. Open-source. For users by users. No donations sought.
-
-If you ever want to contribute something, think about the people working hard to maintain the filter lists you are using, which are available to use by all for free.
-
-
-<!----------------------------------------------------------------------------->
-
-[Peter Lowe's Blocklist]: https://pgl.yoyo.org/adservers/
-[Malicious Blocklist]: https://gitlab.com/malware-filter/urlhaus-filter#malicious-url-blocklist
-[Performance]: https://www.debugbear.com/blog/chrome-extensions-website-performance#the-impact-of-ad-blocking-on-website-performance
-[EasyPrivacy]: https://easylist.to/#easyprivacy
-[Thunderbird]: https://addons.thunderbird.net/thunderbird/addon/ublock-origin/
-[EasyList]: https://easylist.to/#easylist
-[Mozilla]: https://addons.mozilla.org/addon/ublock-origin/
-[Crowdin]: https://crowdin.com/project/ublock
-[Reddit]: https://www.reddit.com/r/uBlockOrigin/
-[Theft]: https://x.com/LeaVerou/status/518154828166725632
-[Opera]: https://addons.opera.com/extensions/details/ublock/
-[Edge]: https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak
-[NPM]: https://www.npmjs.com/package/@gorhill/ubo-core
-
-[Manifesto]: MANIFESTO.md
-[License]: LICENSE.txt
-
-[Nicole Rolls]: https://github.com/nicole-ashley
-
-<!---------------------------------[ Internal ]-------------------------------->
-
-[Manual Installation]: https://github.com/gorhill/uBlock/tree/master/dist#install
-[Extended Syntax]: https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#extended-syntax
-[Privacy Policy]: https://github.com/gorhill/uBlock/wiki/Privacy-policy
-[uBO Filters]: https://github.com/uBlockOrigin/uAssets/tree/master/filters
-[Permissions]: https://github.com/gorhill/uBlock/wiki/Permissions
-[Commit Rate]: https://github.com/gorhill/uBlock/commits/master
-[Works Best]: https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox
-[Deployment]: https://github.com/gorhill/uBlock/wiki/Deploying-uBlock-Origin
-[Blocking]: https://github.com/gorhill/uBlock/wiki/Blocking-mode
-[Releases]: https://github.com/gorhill/uBlock/releases
-[Issues]: https://github.com/uBlockOrigin/uBlock-issues/issues
-[Beta]: https://github.com/gorhill/uBlock/blob/master/dist/README.md#for-beta-version
-[Wiki]: https://github.com/gorhill/uBlock/wiki
-
-<!----------------------------------[ Badges ]--------------------------------->
-
-[Badge Localization]: https://d322cqt584bo4o.cloudfront.net/ublock/localized.svg
-[Badge Commits]: https://img.shields.io/github/commit-activity/m/gorhill/ublock?label=Commits
-[Badge Mozilla]: https://img.shields.io/amo/rating/ublock-origin?label=Firefox
-[Badge License]: https://img.shields.io/badge/License-GPLv3-blue.svg
-[Badge Chrome]: https://img.shields.io/chrome-web-store/rating/cjpalhdlnbpafiamejdnhcphjbkeiagm?label=Chrome
-[Badge Edge]: https://img.shields.io/badge/dynamic/json?label=Edge&color=brightgreen&query=%24.averageRating&suffix=%2F%35&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fodfafepnkmbhccpbejgmiehpchacaeak
-[Badge Issues]: https://img.shields.io/github/issues/uBlockOrigin/uBlock-issues
-[Badge NPM]: https://img.shields.io/npm/v/@gorhill/ubo-core
+第三方專案、API 與授權資訊請查看 [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) 與 [LICENSE.txt](LICENSE.txt)。
