@@ -1,0 +1,49 @@
+Third-party notices
+====================
+
+This project is based on uBlock Origin.
+
+uBlock Origin
+-------------
+Copyright (C) Raymond Hill and contributors
+License: GNU General Public License v3.0 or later
+Source: https://github.com/gorhill/uBlock
+The full license text is included in LICENSE.txt.
+
+SponsorBlock integration
+------------------------
+Project: SponsorBlock
+Source: https://github.com/ajayyy/SponsorBlock
+License: GNU General Public License v3.0 or later
+
+The YouTube controls use the public SponsorBlock API for read-only segment
+lookups. This project does not submit, vote on, or modify SponsorBlock data.
+The SponsorBlock API and database may have additional terms; see the project
+documentation before redistributing or operating a service based on its data.
+
+Return YouTube Dislike integration
+----------------------------------
+Project: Return YouTube Dislike
+Source: https://github.com/Anarios/return-youtube-dislike
+License: GNU General Public License v3.0
+
+The dislike display uses the public Return YouTube Dislike API for read-only
+lookup. The local integration does not copy the upstream extension code, and
+does not submit votes or collect analytics.
+
+Ambient Lite
+------------
+Reference project: Ambient light for YouTube
+Source: https://github.com/WesselKroos/youtube-ambilight
+License: MIT
+
+Ambient Lite is an independent implementation inspired by the referenced
+project's ambient-light concept. No source code from that project is included
+here. Its rendering is local-only and does not upload video frames.
+
+Trademark and affiliation notice
+---------------------------------
+YouTube, uBlock Origin, SponsorBlock, Return YouTube Dislike, and related
+names are owned by their respective holders. This personal build is not
+endorsed by or affiliated with Google, YouTube, Raymond Hill, SponsorBlock,
+Return YouTube Dislike, or Wessel Kroos.

@@ -142,6 +142,14 @@
 		],
 		"supportURL": "https://github.com/uBlockOrigin/uAssets"
 	},
+	"youtube-focus": {
+		"content": "filters",
+		"group": "default",
+		"parent": "YouTube focus",
+		"title": "YouTube focus – Ads",
+		"tags": "ads youtube",
+		"contentURL": "assets/youtube-focus.txt"
+	},
 	"ublock-experimental": {
 		"content": "filters",
 		"group": "default",
@@ -229,6 +237,7 @@
 	"easyprivacy": {
 		"content": "filters",
 		"group": "privacy",
+		"off": true,
 		"title": "EasyPrivacy",
 		"tags": "privacy",
 		"preferred": true,
@@ -535,6 +544,7 @@
 	"plowe-0": {
 		"content": "filters",
 		"group": "multipurpose",
+		"off": true,
 		"updateAfter": 13,
 		"title": "Peter Lowe’s Ad and tracking server list",
 		"tags": "ads privacy security",

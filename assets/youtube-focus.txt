@@ -1,0 +1,18 @@
+! Title: YouTube focus – Ads
+! Description: Conservative cosmetic rules for advertisements rendered in YouTube pages.
+! Homepage: https://github.com/gorhill/uBlock
+! License: GPL-3.0-or-later
+! This list intentionally avoids player-script injection and broad Google host blocking.
+
+! Page and feed advertisements.
+youtube.com##ytd-display-ad-renderer
+youtube.com##ytd-in-feed-ad-layout-renderer
+youtube.com##ytd-promoted-sparkles-web-renderer
+youtube.com##ytd-banner-promo-renderer
+youtube.com##ytd-action-companion-ad-renderer
+youtube.com##ytd-ad-slot-renderer
+
+! Player overlays and ad labels.
+youtube.com##.ytp-ad-overlay-container
+youtube.com##.ytp-ad-overlay-image
+youtube.com##.ytp-ad-text
