@@ -61,7 +61,7 @@ Android Firefox 只能安裝經 Mozilla 簽署的外掛。最新 Firefox Android
 - 外掛尚未經 Mozilla 簽署
 - 外掛尚未宣告支援 Android
 
-## 使用方式
+## 可以做什麼
 
 安裝完成後，開啟 YouTube 影片即可使用。
 
@@ -95,6 +95,24 @@ Android Firefox 只能安裝經 Mozilla 簽署的外掛。最新 Firefox Android
 - 更新頻率
 
 影片暫停或切換到其他分頁時，環境光會停止更新以節省效能。
+
+#### Ambient Lite 使用前後
+
+以下為 Ambient Lite 開啟前後的畫面對比：
+
+**使用前：**
+
+![Ambient Lite 使用前](docs/images/ambient-before.png)
+
+**使用後：**
+
+![Ambient Lite 使用後](docs/images/ambient-after.png)
+
+### 倒讚估算顯示
+
+影片下方會顯示 Return YouTube Dislike 提供的倒讚估算：
+
+![倒讚估算顯示](docs/images/dislike-count.png)
 
 ## 已知限制
 
