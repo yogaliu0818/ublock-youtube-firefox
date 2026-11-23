@@ -16,7 +16,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "uBlock0@raymondhill.net",
+      "id": "youtube-firefox@xanderliu",
       "strict_min_version": "128.0",
       "data_collection_permissions": {
         "required": [ "none" ]
